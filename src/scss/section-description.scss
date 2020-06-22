@@ -1,0 +1,129 @@
+.section-description {
+    
+}
+
+.section-description__container {
+    width: 1440px;
+    max-width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-description__gloves {
+    margin: 0 auto;
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.section-description__title {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    font-size: 80px;
+    text-transform: uppercase;
+    span {
+        display: block;
+        font-weight: normal;
+        color: orange;
+    }
+}
+
+.section-description__stars {
+    color: blue;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+        &:nth-child(even) {
+            font-size: 90px;
+        }
+    }
+}
+
+.section-description__box {
+    display: flex;
+    &:not(:last-child) {
+        margin-bottom: 100px;
+    }
+    & ~ .section-description__box {
+        margin-top: 100px;
+    }
+}
+
+.section-description__image {
+    display: block;
+    position: relative;
+    min-width: 600px;
+    width: 600px;
+    height: 100%;
+    &::before {
+        content: '';
+        width: 110%;
+        height: 110%;
+        background: url(../img/img-brush_stroke.png) center no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: .2;
+        z-index: -1;
+    }
+    &::after {
+        content: '';
+        width: 6px;
+        height: 100px;
+        background-color: blue;
+        position: absolute;
+        left: 50%;
+    }
+    &_bot-line {
+        &::after {
+            bottom: 0;
+            transform: translate(-50%, 100%);
+        }
+    }
+    &_top-line {
+        &::after {
+            top: 0;
+            transform: translate(-50%, -100%);
+        } 
+    }
+    img {
+        max-width: 100%;
+        border-radius: 50%;
+    }
+}
+
+.section-description__text {
+    h3 {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: red;
+        margin-bottom: 12px;
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+    }
+    p {
+        font-size: 30px;
+        & + p {
+            margin-top: 24px;
+        }
+    }
+}
+
+.section-description__separator {
+    width: 80%;
+    height: 6px;
+    margin: 0 auto;
+    position: relative;
+    background-color: blue;
+}

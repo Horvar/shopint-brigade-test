@@ -1,0 +1,12 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+@import 'main.scss';
+@import 'section-greet.scss';
+@import 'section-description.scss';
+@import 'section-schedule.scss';
+@import 'section-trainers.scss';
+
+body {
+    font-family: 'Proxima Nova Rg';
+}

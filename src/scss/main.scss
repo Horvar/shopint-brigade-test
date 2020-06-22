@@ -1,0 +1,9 @@
+.main {
+    padding: 0 0 100px;
+}
+
+.main__section {
+    & + & {
+        margin-top: 140px;
+    }
+}
