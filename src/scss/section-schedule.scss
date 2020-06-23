@@ -1,53 +1,72 @@
 .section-schedule {
-    background: linear-gradient(rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0.5)), url(../img/bg-section_schedule.jpg) center no-repeat;
-    padding: 180px 0;
+    background: linear-gradient(rgba(5, 60, 148, 0.75), rgba(3, 42, 104, 0.75)), url(../img/bg-section_schedule.jpg) top center no-repeat;
+    background-size: cover;
+    padding: calc-vw-px(1920, 180px, 20px) 20px;
     box-sizing: border-box;
+    filter: contrast(1.25) brightness(1.25) grayscale(.4);
 }
 
 .section-schedule__container {
-    width: 1640px;
+    width: 1554px;
     max-width: 100%;
     margin: 0 auto;
-    padding: 60px 120px;
+    padding: calc-vw-px(1920, 60px, 20px) px-to-vw(1920, 108px) calc-vw-px(1920, 74px, 20px);
+    
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.5);
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    column-gap: 180px;
+    column-gap: calc-vw-px(1920, 160px, 0px);
+
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(1,1fr);
+        row-gap: px-to-vw(767, 80px);
+    }
 }
 
 .section-schedule__title-wrapper {
     display: flex;
     justify-content: center;
     grid-column: 1/-1;
-    margin-bottom: 60px;
+    margin-bottom: 54px;
+    @media (max-width: 767px) {
+        margin-bottom: 0;
+    }
     p {
         display: flex;
         align-items: center;
-        font-size: 80px;
-        color: blue;
+        font-size: calc-vw-px(1920, 76px, 16px);
+        color: $clrBlue;
+        padding: 0 10px;
+        box-sizing: border-box;
+        @media (max-width: 767px) {
+            padding: 0 4px;
+        }
         &:first-child {
             &::before {
-                content: '\01F7CA';
-                font-size: 60px;
+                content: '\2605';
+                font-size: calc-vw-px(1920, 60px, 14px);
+                margin-right: px-to-vw(1920, 6px);
             }
         }
         &:last-child {
             &::after {
-                content: '\01F7CA';
-                font-size: 60px;
+                content: '\2605';
+                font-size: calc-vw-px(1920, 60px, 14px);
+                margin-left: px-to-vw(1920, 6px);
             }
         }
     }
 }
 
 .section-schedule__title {
-    font-size: 100px;
+    font-size: calc-vw-px(1920, 96px, 12px);
+    line-height: calc-vw-px(1920, 96px, 12px);
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
     color: #fff;
-    text-shadow: 0 0 10px #000;
+    text-shadow: 0 0 8px #000;
     position: relative;
     &::before {
 
@@ -61,38 +80,48 @@
 .section-schedule__item {
     position: relative;
     & + & {
-        margin-top: 40px;
-    }
-    & + & {
+        margin-top: 94px;
+        @media (max-width: 767px) {
+            margin-top: px-to-vw(767, 80px);
+        }
         &::before {
             content: '';
-            width: 100px;
-            height: 6px;
+            width: 108px;
+            height: 10px;        
             background-color: #fff;
             position: absolute;
-            top: -20px;
+            top: -60px;
             left: 0;
+            @media (max-width: 767px) {
+                display: none;
+            }
         }
     }
 }
 
 .section-schedule__heading {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     h3 {
-        color: red;
-        font-size: 30px;
+        color: $clrRed;
+        font-size: calc-vw-px(1920, 42px, 30px);
+        line-height: calc-vw-px(1920, 42px, 30px);
+        letter-spacing: px-to-vw(1920, 6.5px);
         text-transform: uppercase;
-        font-weight: bold;
+        font-weight: 500;
+        font-family: "Teko";
     }
     p {
         margin: auto 0 0 12px;
-        color: blue;
-        font-size: 24px;
+        color: $clrBlue;
+        font-size: calc-vw-px(1920, 36px, 16px);
+        line-height: calc-vw-px(1920, 42px, 30px);
         text-transform: uppercase;
         font-weight: bold;
         position: relative;
+        font-family: "Teko";
         &::before {
+            font-family: unset;
             content: '\0024';
         }
     }
@@ -100,7 +129,8 @@
 
 .section-schedule__text {
     p {
-        font-size: 20px;
+        font-size: calc-vw-px(1920, 28px, 16px);
+        line-height: calc-vw-px(1920, 34px, 22px);
         & + p {
             margin-top: 20px;
         }
@@ -109,21 +139,60 @@
 
 .section-schedule__button-wrapper{
     grid-column: 1/-1;
-    margin-top: 60px;
+    margin-top: 70px;
     display: flex;
+    @media (max-width: 767px) {
+        margin-top: 0;
+    }
     button {
-        background: red;
+        background: transparent;
         color: #fff;
-        font-size: 26px;
-        letter-spacing: 3px;
+        font-size: calc-vw-px(1920, 26px, 14px);
+        letter-spacing: px-to-vw(1920, 3px);
         text-transform: uppercase;
-        font-weight: bold;
+        font-weight: 600;
         border: none;
-        border-radius: 100px;
-        padding: 20px 40px;
+        border-radius: 28px;
+        padding: 18px 70px;
         box-sizing: border-box;
         max-width: 600px;
         margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        @media (max-width: 539px) {
+            padding: 18px 0;
+            width: 100%;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $clrRed;
+            border-radius: 10rem;
+            z-index: -2;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: darken($clrRed, 15%);
+            transition: all .3s;
+            border-radius: 10rem;
+            z-index: -1;
+        }
+        &:hover {
+            color: #fff;
+            &:before {
+                width: 100%;
+            }
+        }
         span {
             font-weight: normal;
         }

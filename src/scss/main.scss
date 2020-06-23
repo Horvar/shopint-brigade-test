@@ -1,9 +1,22 @@
 .main {
+    max-width: 100%;
     padding: 0 0 100px;
 }
 
 .main__section {
     & + & {
-        margin-top: 140px;
     }
+}
+
+.main__greet {
+    margin-bottom: 30px;
+}
+
+.main__description {
+    margin-bottom: 142px;
+    margin-bottom: calc-vw-px(1920, 142px, 40px);
+}
+
+.main__schedule {
+    margin-bottom: calc-vw-px(1920, 118px, 60px);
 }

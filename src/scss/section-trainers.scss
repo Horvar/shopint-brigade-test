@@ -3,7 +3,7 @@
 }
 
 .section-trainers__container {
-    width: 1440px;
+    width: 1380px;
     max-width: 100%;
     padding: 0 20px;
     box-sizing: border-box;
@@ -17,17 +17,21 @@
 .section-trainers__list {
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(1,1fr);
+        row-gap: calc-vw-px(767, 80px, 20px);
+    }
 }
 
 .section-trainers__item {
     &:nth-child(even) {
-        margin-left: -6px;
+        margin-left: -10px;
         .section-trainers__photo {
-            margin: 0 0 80px auto;
+            margin: 0 0 46px auto;
         }
         .section-trainers__info {
             border-right: none;
-            border-left: 6px solid blue;
+            border-left: 10px solid $clrBlue;
         }
         .section-trainers__info-wrapper {
             margin: 0 0 0 auto;
@@ -38,11 +42,14 @@
 .section-trainers__photo {
     display: block;
     position: relative;
-    width: 550px;
-    height: 550px;
+    width: calc-vw-px(1920, 550px, 160px);
+    height: calc-vw-px(1920, 550px, 160px);
     border-radius: 50%;
-    background: #999;
-    margin-bottom: 80px;
+    background: #D4D4D4;
+    margin-bottom: 46px;
+    @media (max-width: 767px) {
+        margin: 0 auto 26px!important;
+    }
     &::before {
         content: '';
         width: 110%;
@@ -59,26 +66,49 @@
 }
 
 .section-trainers__info {
-    border-top: 6px solid blue;
-    border-right: 6px solid blue;
+    border-top: 10px solid $clrBlue;
+    border-right: 10px solid $clrBlue;
+    @media (max-width: 767px) {
+        border-top: 6px solid $clrBlue;
+        border-right: none!important;
+        border-left: none!important;
+        max-width: 400px;
+        margin: 0 auto;
+    }
 }
 
 .section-trainers__info-wrapper {
+    width: calc-vw-px(1920, 550px, 160px);
     text-align: center;
     text-transform: uppercase;
-    font-weight: bold;
-    color: red;
+    color: $clrRed;
+    padding: 50px 0 0;
+    box-sizing: border-box;
+    font-family: "Teko";
+    @media (max-width: 767px) {
+        padding: 20px 0 0;
+        width: 100%;
+    }
 }
 
 .section-trainers__first-name {
-    font-size: 40px;
+    font-size: calc-vw-px(1920, 62px, 46px);
+    line-height: calc-vw-px(1920, 42px, 26px);
+    letter-spacing: px-to-vw(1920, 6.5px);
+    font-weight: 500;
+    margin-bottom: 14px;
 }
 
 .section-trainers__last-name {
-    font-size: 80px;
+    font-size: calc-vw-px(1920, 104px, 66px);
+    line-height: calc-vw-px(1920, 80px, 46px);
+    letter-spacing: px-to-vw(1920, 6.5px);
+    font-weight: 600;
+    margin-bottom: 6px;
 }
 
 .section-trainers__post {
-    font-size: 30px;
-    color: blue;
+    font-size: calc-vw-px(1920, 44px, 26px);
+    letter-spacing: px-to-vw(1920, 4.5px);
+    color: $clrBlue;
 }

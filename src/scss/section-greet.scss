@@ -8,6 +8,7 @@
 
 .section-greet__bg {
     background: url(../img/bg-section_greet.jpg) center no-repeat;
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -18,7 +19,7 @@
 
 .section-greet__container {
     background: radial-gradient(transparent 40%, #000);
-    padding: 200px 0;
+    padding: calc(30vh) 20px;
     box-sizing: border-box;
     height: 100%;
 }
@@ -26,20 +27,32 @@
 .section-greet__subtitle {
     text-transform: uppercase;
     text-align: center;
-    font-size: 50px;
-    text-shadow: 0 0 10px #000;
+    font-size: 90px;
+    font-size: calc(4.16667vw + 10px);
+    font-weight: 500;
+    letter-spacing: px-to-vw(1920, 6px);
+    text-shadow: 0 0 20px #000;
+    font-family: "Teko";
 }
 
 .section-greet__title {
     text-transform: uppercase;
     text-align: center;
-    font-size: 180px;
+    font-size: calc(8.33333vw + 20px);
+    line-height: 180px;
+    line-height: px-to-vw(1920, 120px);
+    line-height: calc(6.25vw + 60px);
     font-weight: bold;
     text-shadow: 0 0 40px #000;
 }
 
 .section-greet__slogan {
     text-align: center;
-    font-size: 40px;
-    text-shadow: 0 0 10px #000;
+    font-size: calc(1.5625vw + 10px);
+    text-shadow: 0 0 16px #000;
+    font-weight: 600;
+    letter-spacing: px-to-vw(1920, 3.5px);
+    i {
+        font-style: italic;
+    }
 }

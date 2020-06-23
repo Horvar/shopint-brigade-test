@@ -1,0 +1,12 @@
+@function px-to-vw($vw-viewport, $font){
+  $vw-context: $vw-viewport * 0.01 * 1px;
+  @return $font / $vw-context * 1vw;
+  @return $font;
+}
+
+@function calc-vw-px($vw-viewport1, $baseSize, $pxPart){
+  $vw-context1: $vw-viewport1 * 0.01 * 1px;
+  $pxToVw: $baseSize - $pxPart;
+  $vwPart: $pxToVw / $vw-context1 * 1vw;
+  @return calc(#{$vwPart} + #{$pxPart});
+}
